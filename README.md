@@ -1,1 +1,1 @@
-# HomeAsssitant Configus
+# HomeAsssitant Configs
