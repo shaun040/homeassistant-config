@@ -1,0 +1,10 @@
+  alias: "Back Door Midnight"
+  trigger:
+    platform: time
+    after: "11:59:00"
+  condition:
+    condition: state
+    entity_id: light.back_door
+    state: on
+  action:
+    service: light.turn_off

@@ -1,0 +1,7 @@
+  alias: "Outside Off"
+  trigger:
+    platform: time
+    after: "20:59:00"
+  action:
+    service: light.turn_off
+    entity_id: light.office

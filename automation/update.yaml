@@ -1,0 +1,10 @@
+alias: 'Update Available Notifications'
+trigger:
+ platform: state
+ entity_id: updater.updater
+action:
+ service: notify.pushbullet
+ data:
+  title: 'Update for Home Assistant is available.'
+  target: device/nexus6p
+  message: "Home Assistant  {{ states.updater.updater.state }}  is now available."

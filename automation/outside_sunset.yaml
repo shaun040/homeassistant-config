@@ -1,0 +1,10 @@
+  alias: "Outside Sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "00:10:00"
+  action:
+    service: light.turn_on
+    entity_id: group.outside_door_lights
+    data:
+      brightness: 55

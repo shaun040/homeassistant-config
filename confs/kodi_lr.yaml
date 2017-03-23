@@ -1,0 +1,19 @@
+alias: "Movie time on"
+trigger:
+  platform: state
+  entity_id: media_player.kodi_living_room
+  to: 'playing'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: 'above_horizon'
+    - condition: template
+      value_template: '{{ states.media_player.kodi_living_room.attributes.media_content_type == "video" }}'
+    - condition: state
+      entity_id: light.living_room_lights_level_2_0
+      state: "on"
+action:
+  service: scene.turn_on
+  entity_id: scene.kodi_movies

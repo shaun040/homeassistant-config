@@ -1,0 +1,22 @@
+# Automation
+
+automation:
+alias: "VideoTime"
+trigger:
+  platform: state
+  entity_id: media_player.kodi
+  to: 'playing'
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: '{{ states.media_player.kodi.attributes.media_content_type == "video" }}'
+    - condition: state
+      entity_id: light.kitchen_island_white
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.theater
+      state: 'on'
+action:
+  service: scene.turn_off
+  entity_id: scene.kodi_lights_off
