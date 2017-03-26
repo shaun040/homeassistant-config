@@ -68,7 +68,7 @@ light:
   host: 192.168.10.78
 
 emulated_hue:
-  host_ip: 192.168.10.77
+  host_ip: 192.168.10.84
   
 digital_ocean:
   access_token: !secret digital_ocean_token
@@ -134,6 +134,11 @@ group:
    - light.back_door
    - light.lamp_post
 
+lutron_caseta:
+    host: 192.168.10.83
+    username: lutron
+    password: integration
+
 #camera:
  # platform: foscam
   #ip: 192.168.10.180
@@ -151,7 +156,7 @@ group:
 
 remote:
   - platform: harmony
-    name: Living Room
+    name: Harmony
     host: 192.168.10.163
 
 zwave:

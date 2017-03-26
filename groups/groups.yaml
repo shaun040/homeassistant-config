@@ -1,0 +1,3 @@
+dining_room:
+    name: Dining Room
+    entities: group.all_dining_room
