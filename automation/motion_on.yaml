@@ -11,5 +11,5 @@
   after_offset: "-1:00:00"
  action:
   service: light.turn_on
-  entity_id: light.dining_room_fan
+  entity_id: group.all_dining_room
 

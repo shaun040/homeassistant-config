@@ -9,5 +9,5 @@
   before: sunset
  action:
    service: light.turn_off
-   entity_id: light.dining_room_fan
+   entity_id: group.all_dining_room
 

@@ -1,0 +1,12 @@
+  alias: "Sump Pump On"
+  trigger:
+    platform: state
+    entity_id: switch.workbench
+    from: "on"
+    to: "off"
+    for:
+      minutes: 1
+      seconds: 22
+  action:
+    service: switch.turn_on
+    entity_id: switch.workbench

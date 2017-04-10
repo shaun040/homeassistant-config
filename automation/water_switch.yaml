@@ -1,0 +1,13 @@
+  alias: "Water Sensor Off"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor_8_0
+    to: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.workbench
+    - service: homeassistant.turn_off
+      entity_id: automation.sump_pump_off
+    - service: homeassistant.turn_off
+      entity_id: automation.sump_pump_on
+ 
