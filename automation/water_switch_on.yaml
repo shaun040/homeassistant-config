@@ -1,12 +1,8 @@
-  alias: "Water Sensor On"
-  trigger:
-    platform: state
-    entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor_8_0
-    to: 'on'
-  action:
-    - service: homeassistant.turn_on
-      entity_id: switch.workbench
-    - service: homeassistant.turn_on
-      entity_id: automation.sump_pump_off
-    - service: homeassistant.turn_on
-      entity_id: automation.sump_pump_on 
+ alias: "Water Sensor On"
+ trigger:
+   platform: state
+   entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor_8_0
+   to: 'on'
+ action:
+   service: switch.turn_on
+   entity_id: switch.sump_pump

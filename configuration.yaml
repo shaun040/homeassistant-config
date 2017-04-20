@@ -84,17 +84,17 @@ notify:
     name: PushBullet
 
 #device_tracker:
- # - platform: unifi
-  #  host: 192.168.10.81
-   # username: admin
-    #password: !secret unifi_pw
+    #platform: unifi
+   # host: 192.168.10.81
+  #   username: admin
+ #    password: !secret unifi_pw
 
 # Frontpoint
 
-#alarm_control_panel:
- # platform: alarmdotcom
-  #username: !secret alarmdotcom_user
-  #password: !secret alarmdotcom_pw
+alarm_control_panel:
+  platform: alarmdotcom
+  username: !secret alarmdotcom_user
+  password: !secret alarmdotcom_pw
 
 # Switches
 
@@ -106,33 +106,13 @@ switch:
  #   host: 192.168.10.26
   #  name: Christmas Tree
 
-  #- platform: tplink
-  #  host: 192.168.10.150
-  #  name: Christmas Lights
-
   - platform: tplink
-    host: 192.168.10.173
-    name: Workbench
+    host: 192.168.10.172
+    name: Sump Pump
 
-group:
- #indoor_christmas_lights:
-  #name: Christmas Lights Inside
-  #view: yes
-  #entities: 
-  # - switch.christmas_tree
-  # - switch.christmas_lights
-  # - switch.leg_lamp
-  # - switch.table_lights
-
- all_dining_room:
-   - light.dining_room_ceiling
-   - light.dining_room_fan
-
-
- outside_door_lights:
-   - light.front_door
-   - light.back_door
-   - light.lamp_post
+#  - platform: tplink
+#    host: 192.168.10.173
+#    name: Workbench
 
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
@@ -169,6 +149,7 @@ zwave:
 ###	Scene	###
 #scene: !include_dir_list scenes
 
+group: !include_dir_merge_named groups
 ###  Automation  ###
 automation: !include_dir_list automation
 #automation: !include_dir_list christmas_automation

@@ -1,0 +1,34 @@
+all_dining_room:
+   entities:
+     - light.dining_room_ceiling
+     - light.dining_room_fan
+   name: Dining Room Lights
+
+basement:
+  name: Basement
+  view: yes
+  entities:
+    - automation.water_sensor_off
+    - automation.water_sensor_on
+    - automation.sump_pump_off
+    - automation.sump_pump_on
+    - switch.sump_pump
+    - binary_sensor.aeotec_dsb45_water_sensor_sensor_8_0
+
+Outside Lights:
+   - light.front_door
+   - light.back_door
+   - light.lamp_post
+
+lights:
+  name: Lights
+  view: yes
+  entities:
+    - light.back_door
+    - light.front_door
+    - light.lamp_post
+    - light.dining_room_fan
+    - light.dining_room_ceiling
+    - light.kitchen
+    - light.living_room
+    - light.office
