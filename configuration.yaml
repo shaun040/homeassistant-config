@@ -117,9 +117,6 @@ switch:
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
     host: 192.168.10.83
-    username: lutron
-    password: integration
-
 #camera:
  # platform: foscam
   #ip: 192.168.10.180
