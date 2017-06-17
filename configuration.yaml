@@ -89,6 +89,9 @@ notify:
   #   username: admin
  #    password: !secret unifi_pw
 
+device_tracker:
+  - platform: owntracks
+
 # Frontpoint
 
 alarm_control_panel:
