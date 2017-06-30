@@ -140,8 +140,9 @@ remote:
     name: Harmony
     host: 192.168.10.163
 
+#Symlink to 99-USB UDEV Rules
 zwave:
-  usb_path: /dev/ttyACM0
+  usb_path: /dev/zwave
 
 ###	kodi	###
 #media_player: !include_dir_list media_player
