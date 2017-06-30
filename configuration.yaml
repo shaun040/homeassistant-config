@@ -121,13 +121,6 @@ switch:
 lutron_caseta:
     host: 192.168.10.83
 
-# Kodi Living Room
-#media_player:
- # - platform: kodi
-  #  host: http://192.168.10.71
-   # name: Kodi Living Room
-    #username: kodi
-    #password: !secret kodi_pw
 
 remote:
   - platform: harmony
