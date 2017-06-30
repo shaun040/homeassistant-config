@@ -120,12 +120,6 @@ switch:
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
     host: 192.168.10.83
-#camera:
- # platform: foscam
-  #ip: 192.168.10.180
-  #username: admin
-  #password: XOnZvbs1f8zZ
-  #name: Kaylee Bedroom
 
 # Kodi Living Room
 #media_player:
