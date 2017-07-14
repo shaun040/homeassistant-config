@@ -114,9 +114,12 @@ switch:
     name: Sump Pump
 
   - platform: tplink
-    host: 192.168.10.173
+    host: 192.168.10.177
     name: Office AC
 
+  - platform: tplink
+    host: 192.168.10.173
+    name: Workbench Light
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
     host: 192.168.10.83

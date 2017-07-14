@@ -4,4 +4,4 @@
     after: "21:00:00"
   action:
     service: switch.turn_off
-    entity_id: switch.workbench
+    entity_id: switch.workbench_light
