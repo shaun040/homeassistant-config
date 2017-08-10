@@ -1,7 +1,7 @@
   alias: "Salt Lamp Off"
   trigger:
     platform: time
-    after: "10:30:00"
+    at: "10:30:00"
   action:
     service: switch.turn_off
     entity_id: switch.salt_light
