@@ -11,7 +11,7 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
 
-
+config:
 # Enables the frontend
 frontend:
 
@@ -62,6 +62,15 @@ sensor:
       - clouds
       - rain
       - snow
+  - platform: nzbget
+    host: galactica.fureynet.intranet
+    username: nzbget
+    password: admin
+    monitored_variables:
+      - download_rate
+      - average_download_rate
+      - free_disk_space
+      - uptime
 
 light:
   platform: hue
@@ -120,10 +129,19 @@ switch:
   - platform: tplink
     host: 192.168.10.173
     name: Workbench Light
+
+  - platform: tplink
+    host: 192.168.10.178
+    name: Halloween Lights
+
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
     host: 192.168.10.83
 
+
+mycroft:
+  host: 192.168.10.88
+notify:
 
 remote:
   - platform: harmony
@@ -134,14 +152,19 @@ remote:
 zwave:
   usb_path: /dev/zwave
 
+
+splunk:
+  token: 19517d93-639f-4e18-805a-caa7ad56aeb3
+  host: 172.16.5.29
+ 
 ###	kodi	###
 #media_player: !include_dir_list media_player
 
 ##Vizio##
-media_player:
-  - platform: vizio
-    host: 192.168.10.62
-    access_token: yjr30azbll
+#media_player:
+ # - platform: vizio
+  #  host: 192.168.10.62
+   # access_token: yjr30azbll
 ###	Scene	###
 scene: !include_dir_list scenes
 

@@ -9,6 +9,9 @@ Outside Lights:
    - light.back_door
    - light.lamp_post
 
+Air Conditioners:
+   - switch.living_room_ac
+   - switch.office_ac
 lights:
   name: Lights
   view: yes
@@ -22,6 +25,7 @@ lights:
     - light.living_room
     - light.office
     - switch.workbench_light
+    - switch.salt_light
 
 Dining Room:
   name: Dining Room
