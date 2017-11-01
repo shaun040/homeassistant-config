@@ -150,7 +150,8 @@ remote:
 
 #Symlink to 99-USB UDEV Rules
 zwave:
-  usb_path: /dev/zwave
+  usb_path: /dev/ttyACM0
+  #usb_path: /dev/zwave
 
 
 splunk:
