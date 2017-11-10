@@ -103,10 +103,10 @@ device_tracker:
 
 # Frontpoint
 
-alarm_control_panel:
-  platform: alarmdotcom
-  username: !secret alarmdotcom_user
-  password: !secret alarmdotcom_pw
+#alarm_control_panel:
+ # platform: alarmdotcom
+  #username: !secret alarmdotcom_user
+  #password: !secret alarmdotcom_pw
 
 # Switches
 
@@ -115,24 +115,24 @@ wemo:
 switch:
 
   - platform: tplink
-    host: 192.168.10.171
+    host: 192.168.10.171 #50:c7:bf:04:4b:7e
     name: Living Room AC
 
   - platform: tplink
-    host: 192.168.10.172
+    host: 192.168.10.172 #50:c7:bf:04:4f:01
     name: Sump Pump
 
   - platform: tplink
-    host: 192.168.10.177
+    host: 192.168.10.177 #50:c7:bf:bf:9c:8e
     name: Office AC
 
   - platform: tplink
-    host: 192.168.10.173
+    host: 192.168.10.173 #50:c7:bf:17:b2:c2
     name: Workbench Light
 
   - platform: tplink
-    host: 192.168.10.178
-    name: Halloween Lights
+    host: 192.168.10.178 #50:c7:bf:b2:37:5e
+    name: Nerdsense Studio
 
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:

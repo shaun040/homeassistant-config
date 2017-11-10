@@ -59,9 +59,8 @@ Office:
      - light.office
      - switch.office_ac
 
-Halloween:
-    name: Halloween
-    view: yes
-    entities:
-      - switch.office_ac
-      - switch.halloween_lights
+Nerdsense:
+   name: Nerdsense
+   entities:
+     - switch.nerdsense_studio
+     - light.nerdsense_tv  
