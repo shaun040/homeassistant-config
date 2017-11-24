@@ -19,6 +19,8 @@ http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
 
+system_log:
+
 # Checks for available updates
 updater:
 
@@ -92,14 +94,11 @@ notify:
     api_key: !secret pushbullet_key
     name: PushBullet
 
-#device_tracker:
-    #platform: unifi
-   # host: 192.168.10.81
-  #   username: admin
- #    password: !secret unifi_pw
-
+ios:
 device_tracker:
-  - platform: owntracks
+   - platform: tile
+     username: shaun@fureynet.com
+     password: !secret tile_pw
 
 # Frontpoint
 
@@ -134,10 +133,16 @@ switch:
     host: 192.168.10.178 #50:c7:bf:b2:37:5e
     name: Nerdsense Studio
 
+  - platform: tplink
+    host: 192.168.10.90 #70:4f:57:97:2f:af
+    name: Christmas Tree
+
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
     host: 192.168.10.83
-
+    keyfile: caseta.key
+    certfile: caseta.crt
+    ca_certs: caseta-bridge.crt
 
 mycroft:
   host: 192.168.10.88
