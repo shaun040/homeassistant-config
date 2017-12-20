@@ -1,0 +1,8 @@
+ alias: "Vizio Lights On"
+ trigger:
+   platform: state
+   entity_id: media_player.vizio_lr
+   to: 'playing'
+ action:
+   service: light.turn_off
+   entity_id: light.living_room

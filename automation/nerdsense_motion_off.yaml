@@ -1,0 +1,10 @@
+ # Turns on lights when motion
+ alias: "Motion Light Off"
+ trigger:
+  platform: state
+  entity_id: binary_sensor.ecolink_motion_sensor_sensor
+  to: 'off'
+ action:
+   service: homeassistant.turn_off
+   entity_id: group.nerdsense_all
+

@@ -1,0 +1,11 @@
+ # Turns on Nerdsense All when motion is detected
+ alias: "Nerdsense Motion Light On"
+ trigger:
+  platform: state
+  entity_id: binary_sensor.ecolink_motion_sensor_sensor
+  from: 'off'
+  to: 'on'
+ action:
+  service: homeassistant.turn_on
+  entity_id: group.nerdsense_all
+
