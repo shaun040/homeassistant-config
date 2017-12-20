@@ -95,10 +95,11 @@ notify:
     name: PushBullet
 
 ios:
-device_tracker:
-   - platform: tile
-     username: shaun@fureynet.com
-     password: !secret tile_pw
+
+#device_tracker:
+ #  - platform: tile
+  #   username: shaun@fureynet.com
+   #  password: !secret tile_pw
 
 # Frontpoint
 
@@ -115,7 +116,7 @@ switch:
 
   - platform: tplink
     host: 192.168.10.171 #50:c7:bf:04:4b:7e
-    name: Living Room AC
+    name: Christmas Table
 
   - platform: tplink
     host: 192.168.10.172 #50:c7:bf:04:4f:01
@@ -123,7 +124,7 @@ switch:
 
   - platform: tplink
     host: 192.168.10.177 #50:c7:bf:bf:9c:8e
-    name: Office AC
+    name: Christmas Houses
 
   - platform: tplink
     host: 192.168.10.173 #50:c7:bf:17:b2:c2
@@ -136,7 +137,11 @@ switch:
   - platform: tplink
     host: 192.168.10.90 #70:4f:57:97:2f:af
     name: Christmas Tree
-
+  
+  - platform: tplink
+    host: 192.168.10.91 #70:4f:57:9c:ad:57
+    name: Kitchen Christmas Lights
+ 
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
     host: 192.168.10.83
@@ -155,8 +160,8 @@ remote:
 
 #Symlink to 99-USB UDEV Rules
 zwave:
-  usb_path: /dev/ttyACM0
-  #usb_path: /dev/zwave
+  #usb_path: /dev/ttyACM0
+  usb_path: /dev/zwave
 
 
 splunk:

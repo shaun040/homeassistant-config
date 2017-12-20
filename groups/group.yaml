@@ -59,8 +59,17 @@ Office:
      - light.office
      - switch.office_ac
 
-Nerdsense:
-   name: Nerdsense
+Nerdsense All:
+   name: Nerdsense All
+   view: yes
    entities:
      - switch.nerdsense_studio
      - light.nerdsense_tv  
+
+Indoor Christmas Lights:
+   name: Christmas Lights
+   entities:
+     - switch.christmas_tree
+     - switch.christmas_houses
+     - switch.christmas_table
+     - switch.kitchen_christmas_lights
