@@ -103,10 +103,10 @@ ios:
 
 # Frontpoint
 
-#alarm_control_panel:
- # platform: alarmdotcom
-  #username: !secret alarmdotcom_user
-  #password: !secret alarmdotcom_pw
+alarm_control_panel:
+  platform: alarmdotcom
+  username: !secret alarmdotcom_user
+  password: !secret alarmdotcom_pw
 
 # Switches
 
@@ -151,7 +151,7 @@ lutron_caseta:
 
 mycroft:
   host: 192.168.10.88
-notify:
+#notify:
 
 remote:
   - platform: harmony
@@ -162,11 +162,12 @@ remote:
 zwave:
   #usb_path: /dev/ttyACM0
   usb_path: /dev/zwave
+  network_key: "0x7A, 0x82, 0x56, 0xD2, 0x3B, 0x5B, 0x9C, 0x4C, 0xF9, 0x2A, 0xCC, 0x89, 0xCB, 0x2C, 0xF7, 0x43"
 
 
-splunk:
-  token: 19517d93-639f-4e18-805a-caa7ad56aeb3
-  host: 172.16.5.29
+#splunk:
+ # token: 19517d93-639f-4e18-805a-caa7ad56aeb3
+  #host: 172.16.5.29
  
 ###	kodi	###
 #media_player: !include_dir_list media_player
