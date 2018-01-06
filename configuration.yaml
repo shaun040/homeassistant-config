@@ -114,17 +114,17 @@ wemo:
 
 switch:
 
-  - platform: tplink
-    host: 192.168.10.171 #50:c7:bf:04:4b:7e
-    name: Christmas Table
+#  - platform: tplink
+#    host: 192.168.10.171 #50:c7:bf:04:4b:7e
+#    name: Christmas Table
 
   - platform: tplink
     host: 192.168.10.172 #50:c7:bf:04:4f:01
     name: Sump Pump
 
-  - platform: tplink
-    host: 192.168.10.177 #50:c7:bf:bf:9c:8e
-    name: Christmas Houses
+#  - platform: tplink
+#    host: 192.168.10.177 #50:c7:bf:bf:9c:8e
+#    name: Christmas Houses
 
   - platform: tplink
     host: 192.168.10.173 #50:c7:bf:17:b2:c2
@@ -134,13 +134,13 @@ switch:
     host: 192.168.10.178 #50:c7:bf:b2:37:5e
     name: Nerdsense Studio
 
-  - platform: tplink
-    host: 192.168.10.90 #70:4f:57:97:2f:af
-    name: Christmas Tree
+#  - platform: tplink
+#    host: 192.168.10.90 #70:4f:57:97:2f:af
+#    name: Christmas Tree
   
-  - platform: tplink
-    host: 192.168.10.91 #70:4f:57:9c:ad:57
-    name: Kitchen Christmas Lights
+#  - platform: tplink
+#    host: 192.168.10.91 #70:4f:57:9c:ad:57
+#    name: Kitchen Christmas Lights
  
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
@@ -160,10 +160,8 @@ remote:
 
 #Symlink to 99-USB UDEV Rules
 zwave:
-  #usb_path: /dev/ttyACM0
   usb_path: /dev/zwave
   network_key: "0x7A, 0x82, 0x56, 0xD2, 0x3B, 0x5B, 0x9C, 0x4C, 0xF9, 0x2A, 0xCC, 0x89, 0xCB, 0x2C, 0xF7, 0x43"
-
 
 #splunk:
  # token: 19517d93-639f-4e18-805a-caa7ad56aeb3

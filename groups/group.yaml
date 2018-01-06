@@ -11,6 +11,22 @@ Outside Lights:
 
 Air Conditioners:
    - switch.living_room_ac
+
+upstairs:
+  name: Upstairs
+  view: yes
+  entities:
+    - lock.side_door_locked
+    - light.back_door
+    - light.front_door
+    - light.lamp_post
+    - light.dining_room_fan
+    - light.dining_room_ceiling
+    - light.kitchen
+    - light.living_room
+    - light.office
+    - switch.salt_light
+
 lights:
   name: Lights
   view: yes
@@ -25,6 +41,8 @@ lights:
     - light.office
     - switch.workbench_light
     - switch.salt_light
+    - switch.nerdsense_studio
+    - light.nerdsense_tv
 
 Dining Room:
   name: Dining Room
@@ -66,10 +84,10 @@ Nerdsense All:
      - switch.nerdsense_studio
      - light.nerdsense_tv  
 
-Indoor Christmas Lights:
-   name: Christmas Lights
-   entities:
-     - switch.christmas_tree
-     - switch.christmas_houses
-     - switch.christmas_table
-     - switch.kitchen_christmas_lights
+#Indoor Christmas Lights:
+#   name: Christmas Lights
+#   entities:
+#     - switch.christmas_tree
+#     - switch.christmas_houses
+#     - switch.christmas_table
+#     - switch.kitchen_christmas_lights

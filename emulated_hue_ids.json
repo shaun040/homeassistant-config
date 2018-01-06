@@ -60,6 +60,9 @@
     "62": "light.nerdsense_studio",
     "63": "light.basement",
     "64": "group.all_locks",
+    "65": "switch.switch",
+    "66": "switch.aeotec_zw096_smart_switch_6_switch",
+    "67": "group.all_covers",
     "7": "light.dr_door2",
     "8": "group.all_lights",
     "9": "light.back_door"
