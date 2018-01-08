@@ -168,7 +168,7 @@ zwave:
   #host: 172.16.5.29
  
 ###	kodi	###
-#media_player: !include_dir_list media_player
+media_player: !include_dir_list media_player
 
 ##Vizio##
 #media_player:

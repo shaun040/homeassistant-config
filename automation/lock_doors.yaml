@@ -1,7 +1,7 @@
-  alias: "Lock Side Door"
+  alias: "Lock Doors"
   trigger:
     platform: time
     at: "22:00:00"
   action:
     service: lock.lock
-    entity_id: lock.side_door_locked
+    entity_id: group.all_locks

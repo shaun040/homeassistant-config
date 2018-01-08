@@ -1,6 +1,6 @@
 media_player kodi_lr:
   platform: kodi
-  host: http://192.168.10.71
+  host: http://192.168.10.87
   port: 8080
   name: Kodi Living Room
   username: kodi
