@@ -1,0 +1,11 @@
+ # Unlocks doors when alarm is disarmed
+ alias: "Alarm Disarmed Unlock"
+ trigger:
+   platform: state
+   entity_id: alarm_control_panel.alarmcom
+   to: 'disarmed'
+ action:
+   service: lock.unlock
+   entity_id: group.all_locks
+
+
