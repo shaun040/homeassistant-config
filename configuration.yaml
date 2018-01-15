@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 42.656
-  longitude: -71.3049
+  latitude: 42.628391
+  longitude: -71.28505
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 27
   # metric for Metric, imperial for Imperial
@@ -16,8 +16,12 @@ config:
 frontend:
 
 http:
-  # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
+  server_port: 8123
+  ssl_certificate: /home/homeassistant/.homeassistant/certs/fullchain.pem
+  ssl_key: /home/homeassistant/.homeassistant/certs/privkey.pem
+  #ssl_certificate: /etc/letsencrypt/live/ha.furey.beer/fullchain.pem
+  #ssl_key: /etc/letsencrypt/live/ha.furey.beer/privkey.pem
 
 system_log:
 
@@ -89,12 +93,20 @@ ifttt:
   key: !secret ifttt_key
 
 # Pushbullet
-notify:
-    platform: pushbullet
-    api_key: !secret pushbullet_key
-    name: PushBullet
+notify: !include notify.yaml
+#  - platform: pushbullet
+#    api_key: !secret pushbullet_key
+#    name: fureypb
 
 ios:
+
+device_tracker:
+  - platform: unifi
+    host: fureymgmt.fureynet.intranet
+    verify_ssl: false
+    username: admin
+    password: !secret unifi_pw
+  - platform: owntracks_http
 
 #device_tracker:
  #  - platform: tile
@@ -151,7 +163,6 @@ lutron_caseta:
 
 mycroft:
   host: 192.168.10.88
-#notify:
 
 remote:
   - platform: harmony
@@ -168,13 +179,23 @@ zwave:
   #host: 172.16.5.29
  
 ###	kodi	###
-media_player: !include_dir_list media_player
+#media_player: !include_dir_list media_player
 
-##Vizio##
-#media_player:
- # - platform: vizio
-  #  host: 192.168.10.62
-   # access_token: yjr30azbll
+media_player:
+  - platform: kodi
+    name: Kodi Shield
+    host: 192.168.10.87
+  - platform: kodi
+    name: Kodi Pi
+    host: 192.168.10.76
+    port: 8080
+    username: kodi
+    password: !secret kodi_pw
+  - platform: vizio
+    host: 192.168.10.62
+    access_token: yjr30azbll
+
+zone: !include zones.yaml
 ###	Scene	###
 scene: !include_dir_list scenes
 

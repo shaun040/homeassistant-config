@@ -1,21 +1,10 @@
-media_player kodi_lr:
-  platform: kodi
-  host: http://192.168.10.87
+- platform: kodi
+  name: Kodi Shield
+  host: 192.168.10.87
   port: 8080
-  name: Kodi Living Room
-  username: kodi
-  password: 0g0p0g0!!
-media_player kodi_mibox:
-  platform: kodi
-  host: http://192.168.10.75
+- platform: kodi
+  name: Kodi Pi
+  host: 192.168.10.76
   port: 8080
-  name: Kodi Mi Box
   username: kodi
-  password: 0g0p0g0!!
-media_player kodi_tardis: 
-  platform: kodi
-  host: http://192.168.10.102
-  port: 8080
-  name: Kodi Tardis
-  username: kodi
-  password: 0g0p0g0!!
+  password: kodi

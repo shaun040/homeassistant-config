@@ -63,7 +63,10 @@
     "65": "switch.switch",
     "66": "switch.aeotec_zw096_smart_switch_6_switch",
     "67": "group.all_covers",
+    "68": "media_player.kodi",
+    "69": "media_player.kodi_shield",
     "7": "light.dr_door2",
+    "70": "media_player.kodi_pi",
     "8": "group.all_lights",
     "9": "light.back_door"
 }

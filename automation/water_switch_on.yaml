@@ -1,7 +1,7 @@
  alias: "Water Sensor On"
  trigger:
    platform: state
-   entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor_8_0
+   entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor
    to: 'on'
  action:
    service: homeassistant.turn_on

@@ -1,12 +1,12 @@
  # Alarm locks doors
- alias: "Alarm Arm & Lock"
+ alias: "Alarm Arm Stay & Lock"
  trigger:
    - platform: state
      entity_id: alarm_control_panel.alarmcom
-     to: 'arm_home'
+     to: 'armed_home'
    - platform: state
      entity_id: alarm_control_panel.alarmcom
-     to: "arm_away"
+     to: 'armed_stay'
  action:
    service: lock.lock
    entity_id: group.all_locks
