@@ -7,5 +7,5 @@
    service: homeassistant.turn_on
    entity_id: 
      - switch.sump_pump
-     - automation.sump_pump_on
-     - automation.sump_pump_off
+ #    - automation.sump_pump_on
+  #   - automation.sump_pump_off

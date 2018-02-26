@@ -17,9 +17,9 @@ frontend:
 
 http:
   api_password: !secret http_password
-  server_port: 8123
-  ssl_certificate: /home/homeassistant/.homeassistant/certs/fullchain.pem
-  ssl_key: /home/homeassistant/.homeassistant/certs/privkey.pem
+#  server_port: 8123
+#  ssl_certificate: /home/homeassistant/.homeassistant/certs/fullchain.pem
+ # ssl_key: /home/homeassistant/.homeassistant/certs/privkey.pem
   #ssl_certificate: /etc/letsencrypt/live/ha.furey.beer/fullchain.pem
   #ssl_key: /etc/letsencrypt/live/ha.furey.beer/privkey.pem
 
@@ -37,8 +37,13 @@ conversation:
 
 # Enables support for tracking state changes over time.
 history:
+logger:
+# Records stuff for Logbook
 
+recorder:
+  purge_keep_days: 5
 # View all events in a logbook
+
 logbook:
 
 # Track the sun
@@ -69,7 +74,7 @@ sensor:
       - rain
       - snow
   - platform: nzbget
-    host: galactica.fureynet.intranet
+    host: !secret galactica_host
     username: nzbget
     password: admin
     monitored_variables:
@@ -78,12 +83,12 @@ sensor:
       - free_disk_space
       - uptime
 
-light:
-  platform: hue
-  host: 192.168.10.78
+hue:
+  bridges:
+    - host: !secret hue_ip
 
 emulated_hue:
-  host_ip: 192.168.10.84
+  host_ip: !secret emulated_hue_ip
   
 digital_ocean:
   access_token: !secret digital_ocean_token
@@ -102,16 +107,11 @@ ios:
 
 device_tracker:
   - platform: unifi
-    host: fureymgmt.fureynet.intranet
+    host: !secret unifi_host
     verify_ssl: false
     username: admin
     password: !secret unifi_pw
   - platform: owntracks_http
-
-#device_tracker:
- #  - platform: tile
-  #   username: shaun@fureynet.com
-   #  password: !secret tile_pw
 
 # Frontpoint
 
@@ -156,18 +156,18 @@ switch:
  
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
-    host: 192.168.10.83
+    host: !secret caseta_ip
     keyfile: caseta.key
     certfile: caseta.crt
     ca_certs: caseta-bridge.crt
 
-mycroft:
-  host: 192.168.10.88
+#mycroft:
+ # host: !secret mycroft_ip
 
 remote:
   - platform: harmony
     name: Harmony
-    host: 192.168.10.163
+    host: !secret harmony_ip
 
 #Symlink to 99-USB UDEV Rules
 zwave:
@@ -175,8 +175,8 @@ zwave:
   network_key: !secret zwave_network_key
 
 #splunk:
- # token: 19517d93-639f-4e18-805a-caa7ad56aeb3
-  #host: 172.16.5.29
+ # token: !secret splunk_token
+  #host: !secret splunk_ip
  
 ###	kodi	###
 #media_player: !include_dir_list media_player
@@ -184,16 +184,16 @@ zwave:
 media_player:
   - platform: kodi
     name: Kodi Shield
-    host: 192.168.10.87
+    host: !secret kodi_shield
   - platform: kodi
     name: Kodi Pi
-    host: 192.168.10.76
+    host: !secret kodi_pi
     port: 8080
     username: kodi
     password: !secret kodi_pw
-  - platform: vizio
-    host: 192.168.10.62
-    access_token: yjr30azbll
+  #- platform: vizio
+   # host: !secret vizio_ip
+    #access_token: !secret vizio_token
 
 zone: !include zones.yaml
 ###	Scene	###
