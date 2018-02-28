@@ -3,9 +3,11 @@
     platform: state
     entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor
     to: 'off'
+    for: 
+      minutes: 1
   action:
-    service: homeassistant.turn_off      
-    entity_id: 
-      - switch.sump_pump
-  #    - automation.sump_pump_on
-  #    - automation.sump_pump_off 
+    - service: homeassistant.turn_off      
+      entity_id: switch.sump_pump
+    - service: notify.fureypb
+      data:
+       message: "Sump Pump Stopped"

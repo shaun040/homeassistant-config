@@ -67,6 +67,7 @@
     "69": "media_player.kodi_shield",
     "7": "light.dr_door2",
     "70": "media_player.kodi_pi",
+    "71": "switch.bedroom_light",
     "8": "group.all_lights",
     "9": "light.back_door"
 }

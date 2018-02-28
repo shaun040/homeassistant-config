@@ -126,9 +126,9 @@ wemo:
 
 switch:
 
-#  - platform: tplink
-#    host: 192.168.10.171 #50:c7:bf:04:4b:7e
-#    name: Christmas Table
+  - platform: tplink
+    host: 192.168.10.171 #50:c7:bf:04:4b:7e
+    name: Bedroom Light
 
   - platform: tplink
     host: 192.168.10.172 #50:c7:bf:04:4f:01
@@ -164,11 +164,16 @@ lutron_caseta:
 #mycroft:
  # host: !secret mycroft_ip
 
+august:
+  login_method: email
+  username: "shaun@fureynet.com"
+  password: !secret august
+
 remote:
   - platform: harmony
     name: Harmony
     host: !secret harmony_ip
-
+    activity: 
 #Symlink to 99-USB UDEV Rules
 zwave:
   usb_path: /dev/zwave

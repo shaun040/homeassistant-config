@@ -1,5 +1,5 @@
  # Turns on lights when motion
- alias: "Motion Light Off"
+ alias: "Nerdsense Motion Light Off"
  trigger:
   platform: state
   entity_id: binary_sensor.ecolink_motion_sensor_sensor
