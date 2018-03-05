@@ -8,6 +8,6 @@
   action:
     - service: homeassistant.turn_off      
       entity_id: switch.sump_pump
-    - service: notify.fureypb
+    - service: notify.shauntelegram
       data:
        message: "Sump Pump Stopped"

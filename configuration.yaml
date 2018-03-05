@@ -103,8 +103,14 @@ notify: !include notify.yaml
 #    api_key: !secret pushbullet_key
 #    name: fureypb
 
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret chat_id
 ios:
 
+# Unifi
 device_tracker:
   - platform: unifi
     host: !secret unifi_host
@@ -113,6 +119,11 @@ device_tracker:
     password: !secret unifi_pw
   - platform: owntracks_http
 
+camera:
+  - platform: uvc
+    nvr: !secret unifi_host
+    key: !secret unifi_api_key
+    password: !secret unifi_cam_pw
 # Frontpoint
 
 alarm_control_panel:
