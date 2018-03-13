@@ -1,0 +1,11 @@
+ # Turns on Nerdsense All when motion is detected
+ alias: "Bedroom Motion Light On"
+ trigger:
+  platform: state
+  entity_id: binary_sensor.ecolink_motion_detector_sensor
+  from: 'off'
+  to: 'on'
+ action:
+  service: switch.turn_on
+  entity_id: switch.bedroom_light
+

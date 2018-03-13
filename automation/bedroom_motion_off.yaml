@@ -1,0 +1,10 @@
+ # Turns on lights when motion
+ alias: "Bedroom Motion Light Off"
+ trigger:
+  platform: state
+  entity_id: binary_sensor.ecolink_motion_detector_sensor
+  to: 'off'
+ action:
+   service: switch.turn_off
+   entity_id: switch.bedroom_light
+

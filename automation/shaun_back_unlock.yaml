@@ -1,0 +1,11 @@
+ # Pixel XL away --> Door Unlock
+ alias: "Shaun Back Unlock"
+ trigger:
+   - platform: state
+     entity_id: device_tracker.shauns_pixel
+     to: 'home'
+ action:
+   service: lock.unlock
+   entity_id: group.all_locks
+
+

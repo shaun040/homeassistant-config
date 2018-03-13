@@ -1,0 +1,22 @@
+ # Pixel XL away --> Door Lock
+ alias: "Shaun Away Lock"
+ trigger:
+   platform: state
+   entity_id: device_tracker.shauns_pixel
+   to: 'not_home'
+ condition:
+   - condition: time
+     weekday:
+       - mon
+       - tue
+       - wed
+       - thu
+       - fri
+ action:
+   - service: lock.lock
+     entity_id: group.all_locks
+   - service: notify.fureypb
+     data:
+       message: "Door Lock. Shaun has left the building"
+
+
