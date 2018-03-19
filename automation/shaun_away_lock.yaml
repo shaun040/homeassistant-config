@@ -15,7 +15,7 @@
  action:
    - service: lock.lock
      entity_id: group.all_locks
-   - service: notify.fureypb
+   - service: notify.shauntelegram
      data:
        message: "Door Lock. Shaun has left the building"
 

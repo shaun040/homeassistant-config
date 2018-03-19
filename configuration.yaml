@@ -10,7 +10,7 @@ homeassistant:
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
-
+cloud:
 config:
 # Enables the frontend
 frontend:
@@ -87,8 +87,8 @@ hue:
   bridges:
     - host: !secret hue_ip
 
-emulated_hue:
-  host_ip: !secret emulated_hue_ip
+#emulated_hue:
+ # host_ip: !secret emulated_hue_ip
   
 digital_ocean:
   access_token: !secret digital_ocean_token
@@ -121,7 +121,7 @@ device_tracker:
 
 camera:
   - platform: uvc
-    nvr: !secret unifi_host
+    nvr: !secret unifi_host_nvr
     key: !secret unifi_api_key
     password: !secret unifi_cam_pw
 # Frontpoint
@@ -180,11 +180,11 @@ august:
   username: "shaun@fureynet.com"
   password: !secret august
 
-remote:
-  - platform: harmony
-    name: Harmony
-    host: !secret harmony_ip
-    activity: 
+#remote:
+ # - platform: harmony
+  #  name: Harmony
+   # host: !secret harmony_ip
+    #activity: 
 #Symlink to 99-USB UDEV Rules
 zwave:
   usb_path: /dev/zwave
