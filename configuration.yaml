@@ -10,7 +10,7 @@ homeassistant:
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
-cloud:
+  #cloud:
 config:
 # Enables the frontend
 frontend:
@@ -33,7 +33,7 @@ updater:
 discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+#conversation:
 
 # Enables support for tracking state changes over time.
 history:
@@ -41,11 +41,14 @@ logger:
 # Records stuff for Logbook
 
 recorder:
-  purge_keep_days: 5
+  db_url: !secret mysql_db  
 # View all events in a logbook
 
 logbook:
 
+influxdb:
+  host: !secret influxdb_host
+  database: homeassistant
 # Track the sun
 sun:
 
@@ -119,11 +122,11 @@ device_tracker:
     password: !secret unifi_pw
   - platform: owntracks_http
 
-camera:
-  - platform: uvc
-    nvr: !secret unifi_host_nvr
-    key: !secret unifi_api_key
-    password: !secret unifi_cam_pw
+    #camera:
+    #- platform: uvc
+    #nvr: !secret unifi_host_nvr
+    #key: !secret unifi_api_key
+    #password: !secret unifi_cam_pw
 # Frontpoint
 
 alarm_control_panel:
@@ -137,9 +140,9 @@ wemo:
 
 switch:
 
-  - platform: tplink
-    host: 192.168.10.171 #50:c7:bf:04:4b:7e
-    name: Bedroom Light
+        #  - platform: tplink
+        #host: 192.168.10.171 #50:c7:bf:04:4b:7e
+        #name: Bedroom Light
 
   - platform: tplink
     host: 192.168.10.172 #50:c7:bf:04:4f:01
@@ -161,9 +164,9 @@ switch:
 #    host: 192.168.10.90 #70:4f:57:97:2f:af
 #    name: Christmas Tree
   
-#  - platform: tplink
-#    host: 192.168.10.91 #70:4f:57:9c:ad:57
-#    name: Kitchen Christmas Lights
+  - platform: tplink
+    host: 192.168.10.91 #70:4f:57:9c:ad:57
+    name: Office AC
  
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
