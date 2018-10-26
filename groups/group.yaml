@@ -91,3 +91,10 @@ Nerdsense All:
 #     - switch.christmas_houses
 #     - switch.christmas_table
 #     - switch.kitchen_christmas_lights
+
+Halloween:
+   name: Halloween Lights
+   entities:
+     - switch.halloween_dr
+     - switch.halloween_kitchen
+

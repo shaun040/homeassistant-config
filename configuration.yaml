@@ -17,6 +17,9 @@ frontend:
 
 http:
   api_password: !secret http_password
+
+  ssl_certificate: /home/homeassistant/.homeassistant/certs/conf/live/ha.furey.beer/fullchain.pem
+  ssl_key: /home/homeassistant/.homeassistant/certs/conf/live/ha.furey.beer/privkey.pem
 #  server_port: 8123
 
 system_log:
@@ -115,7 +118,7 @@ device_tracker:
     verify_ssl: false
     username: admin
     password: !secret unifi_pw
-  - platform: owntracks_http
+  - platform: owntracks
 
     #camera:
     #- platform: uvc
@@ -132,20 +135,22 @@ alarm_control_panel:
 # Switches
 
 wemo:
+  static:
+    - 192.168.10.182
 
 switch:
 
         #  - platform: tplink
-        #host: 192.168.10.171 #50:c7:bf:04:4b:7e
+        #host: 192.168.10.141 #50:c7:bf:04:4b:7e
         #name: Bedroom Light
 
-  - platform: tplink
-    host: 192.168.10.172 #50:c7:bf:04:4f:01
-    name: Sump Pump
-
 #  - platform: tplink
-#    host: 192.168.10.177 #50:c7:bf:bf:9c:8e
-#    name: Christmas Houses
+ #   host: 192.168.10.172 #50:c7:bf:04:4f:01
+  #  name: Sump Pump
+
+  - platform: tplink
+    host: 192.168.10.177 #50:c7:bf:bf:9c:8e
+    name: Halloween DR
 
   - platform: tplink
     host: 192.168.10.173 #50:c7:bf:17:b2:c2
@@ -155,13 +160,17 @@ switch:
     host: 192.168.10.178 #50:c7:bf:b2:37:5e
     name: Nerdsense Studio
 
-#  - platform: tplink
-#    host: 192.168.10.90 #70:4f:57:97:2f:af
-#    name: Christmas Tree
+  - platform: tplink
+    host: 192.168.10.90 #70:4f:57:97:2f:af
+    name: Halloween Kitchen
   
   - platform: tplink
     host: 192.168.10.91 #70:4f:57:9c:ad:57
     name: Office AC
+
+  - platform: tplink
+    host: 192.168.10.176 #0c:80:63:b3:73:a6 #power strip
+    name: Power Strip
  
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
@@ -177,6 +186,13 @@ august:
   login_method: email
   username: !secret august_user
   password: !secret august
+
+mqtt:
+  broker: m12.cloudmqtt.com
+  port: 26484
+  client_id: home-assistant
+  username: !secret cloudmqttuser
+  password: !secret cloudmqttpw
 
 #remote:
  # - platform: harmony

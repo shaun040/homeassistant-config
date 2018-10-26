@@ -3,7 +3,7 @@
     platform: time
     at: "21:00:00"
   action:
-    service: notify.shaunpb_kerryha
+    service: notify.shauntg_kerryha
     data_template:
       title: "Alarm Reminder"
       message: "Set the Alarm!"

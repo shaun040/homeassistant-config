@@ -2,7 +2,7 @@
  alias: "Shaun Away Lock"
  trigger:
    platform: state
-   entity_id: device_tracker.shauns_pixel
+   entity_id: device_tracker.shaun_shaunpixelmqtt #owntracks mqtt gps
    to: 'not_home'
  condition:
    - condition: time

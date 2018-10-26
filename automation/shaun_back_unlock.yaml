@@ -2,10 +2,13 @@
  alias: "Shaun Back Unlock"
  trigger:
    - platform: state
-     entity_id: device_tracker.shauns_pixel
+     entity_id: device_tracker.shaun_shaunpixelmqtt #owntracks gps
      to: 'home'
  action:
    service: lock.unlock
    entity_id: group.all_locks
+ #  service: notify.shauntelegram
+  #   data:
+   #    message: "Door Unlocked"
 
 
