@@ -1,5 +1,5 @@
-homeassistant:
-  # Name of the location where Home Assistant is running
+homeassistant:  
+# Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
   latitude: 42.628391
@@ -16,10 +16,10 @@ config:
 frontend:
 
 http:
-  api_password: !secret http_password
+ # api_password: !secret http_password
 
-  ssl_certificate: /home/homeassistant/.homeassistant/certs/conf/live/ha.furey.beer/fullchain.pem
-  ssl_key: /home/homeassistant/.homeassistant/certs/conf/live/ha.furey.beer/privkey.pem
+  ssl_certificate: /home/homeassistant/.homeassistant/renew/live/ha.furey.beer/fullchain.pem
+  ssl_key: /home/homeassistant/.homeassistant/renew/live/ha.furey.beer/privkey.pem
 #  server_port: 8123
 
 system_log:
@@ -45,9 +45,9 @@ recorder:
 
 logbook:
 
-influxdb:
-  host: !secret influxdb_host
-  database: homeassistant
+#influxdb:
+ # host: !secret influxdb_host
+  #database: homeassistant
 # Track the sun
 sun:
 
@@ -57,12 +57,12 @@ sun:
 
 # Nest
 
-nest: 
- client_id: !secret nest_client_id
- client_secret: !secret nest_client_secret
+#nest: 
+ #client_id: !secret nest_client_id
+ #client_secret: !secret nest_client_secret
 
-climate:
-  platform: nest
+#climate:
+ # platform: nest
 
 sensor:
   - platform: openweathermap
@@ -75,15 +75,6 @@ sensor:
       - clouds
       - rain
       - snow
-  - platform: nzbget
-    host: !secret galactica_host
-    username: nzbget
-    password: admin
-    monitored_variables:
-      - download_rate
-      - average_download_rate
-      - free_disk_space
-      - uptime
 
 hue:
   bridges:
@@ -98,7 +89,7 @@ digital_ocean:
 # IFTTT
 ifttt:
   key: !secret ifttt_key
-
+  #test
 # Pushbullet
 notify: !include notify.yaml
 #  - platform: pushbullet
@@ -109,16 +100,10 @@ telegram_bot:
     api_key: !secret telegram_api_key
     allowed_chat_ids:
       - !secret chat_id
-ios:
-
+#ios:
+mobile_app:
 # Unifi
-device_tracker:
-  - platform: unifi
-    host: !secret unifi_host
-    verify_ssl: false
-    username: admin
-    password: !secret unifi_pw
-  - platform: owntracks
+  #- platform: owntracks
 
     #camera:
     #- platform: uvc
@@ -138,39 +123,48 @@ wemo:
   static:
     - 192.168.10.182
 
-switch:
+tplink:
+   discovery: true
+  # strip:
+    # - host: 192.168.10.176
+ # switch:
+  #  - host: 192.168.10.141
+   # - host: 192.168.10.173
+    #- host: 192.168.10.178
+    #- host: 192.168.10.176
+#switch:
 
-        #  - platform: tplink
-        #host: 192.168.10.141 #50:c7:bf:04:4b:7e
-        #name: Bedroom Light
+#  - platform: tplink
+ #   host: 192.168.10.141 #50:c7:bf:04:4b:7e
+  #  name: Sump Pump
 
 #  - platform: tplink
  #   host: 192.168.10.172 #50:c7:bf:04:4f:01
-  #  name: Sump Pump
+  #  name: Extra
 
-  - platform: tplink
-    host: 192.168.10.177 #50:c7:bf:bf:9c:8e
-    name: Halloween DR
+  #- platform: tplink
+   # host: 192.168.10.177 #50:c7:bf:bf:9c:8e
+    #name: Christmas Table
 
-  - platform: tplink
-    host: 192.168.10.173 #50:c7:bf:17:b2:c2
-    name: Workbench Light
+ # - platform: tplink
+  #  host: 192.168.10.173 #50:c7:bf:17:b2:c2
+   # name: Workbench Light
 
-  - platform: tplink
-    host: 192.168.10.178 #50:c7:bf:b2:37:5e
-    name: Nerdsense Studio
+ # - platform: tplink
+  #  host: 192.168.10.178 #50:c7:bf:b2:37:5e
+   # name: Nerdsense Studio
 
-  - platform: tplink
-    host: 192.168.10.90 #70:4f:57:97:2f:af
-    name: Halloween Kitchen
+  #- platform: tplink
+   # host: 192.168.10.90 #70:4f:57:97:2f:af
+    #name: Christmas Tree
   
-  - platform: tplink
-    host: 192.168.10.91 #70:4f:57:9c:ad:57
-    name: Office AC
+ # - platform: tplink
+  #  host: 192.168.10.91 #70:4f:57:9c:ad:57
+   # name: Office Tree
 
-  - platform: tplink
-    host: 192.168.10.176 #0c:80:63:b3:73:a6 #power strip
-    name: Power Strip
+ # - platform: tplink
+  #  host: 192.168.10.176 #0c:80:63:b3:73:a6 #power strip
+   # name: Power Strip
  
 # Lutron Caseta -- Password cannot be stored in a secrets file
 lutron_caseta:
@@ -211,19 +205,26 @@ zwave:
 ###	kodi	###
 #media_player: !include_dir_list media_player
 
-media_player:
-  - platform: kodi
-    name: Kodi Shield
-    host: !secret kodi_shield
-  - platform: kodi
-    name: Kodi Pi
-    host: !secret kodi_pi
-    port: 8080
-    username: kodi
-    password: !secret kodi_pw
+#media_player:
+ # - platform: kodi
+  #  name: Kodi Shield
+   # host: !secret kodi_shield
+  #- platform: kodi
+   # name: Kodi Pi
+    #host: !secret kodi_pi
+    #port: 8080
+    #username: kodi
+    #password: !secret kodi_pw
   #- platform: vizio
    # host: !secret vizio_ip
     #access_token: !secret vizio_token
+
+  #glink:
+  #username: !secret blink_user
+  #password: !secret blink_pw
+
+binary_sensor:
+  - platform: ring
 
 zone: !include zones.yaml
 ###	Scene	###
@@ -231,5 +232,6 @@ scene: !include_dir_list scenes
 
 group: !include_dir_merge_named groups
 ###  Automation  ###
-automation: !include_dir_list automation
+#automation: !include_dir_list automation
+automation: !include automations.yaml
 #automation: !include_dir_list christmas_automation

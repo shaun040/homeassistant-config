@@ -1,13 +1,14 @@
   alias: "Water Sensor Off"
   trigger:
     platform: state
-    entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor
+    entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor_3
     to: 'off'
     for: 
      seconds: 15
   action:
-          # - service: homeassistant.turn_off      
-          # entity_id: switch.sump_pump
-    - service: notify.shauntelegram
+    - service: homeassistant.turn_off      
+      entity_id: switch.sump_pump
+    - service: notify.shauntelegram   
+# - service: notify.shauntg_kerryha
       data:
-       message: "Water Level Dropping"
+       message: "Water Level Dropping. Pumping Stopped"

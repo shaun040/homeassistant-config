@@ -10,8 +10,8 @@ Outside Lights:
    - light.lamp_post
 
 Air Conditioners:
-   - switch.living_room_ac
-
+   - switch.office_tree
+   - switch.office_ac_2
 upstairs:
   name: Upstairs
   view: yes
@@ -82,19 +82,45 @@ Nerdsense All:
    view: yes
    entities:
      - switch.nerdsense_studio
-     - light.nerdsense_tv  
+     - light.basement 
 
-#Indoor Christmas Lights:
-#   name: Christmas Lights
-#   entities:
-#     - switch.christmas_tree
+Indoor Christmas Lights:
+   name: Christmas Lights
+   entities:
+     - switch.christmas_tree
+     - switch.dr_christmas_tree
+     - switch.office_tree
+     - switch.unnamed_device
+     - switch.unnamed_device_2
+    # - switch.plug_1
+     - switch.plug_4
+     - switch.plug_3
 #     - switch.christmas_houses
-#     - switch.christmas_table
+    # - switch.christmas_table
+     #- switch.office_ac_2
+     #- switch.office_tree
+     - switch.leg_lamp
 #     - switch.kitchen_christmas_lights
 
-Halloween:
-   name: Halloween Lights
+#Outdoor Christmas Lights:
+   name: Outdoor Christmas Lights
    entities:
-     - switch.halloween_dr
-     - switch.halloween_kitchen
+     - switch.ge_14284_outdoor_smart_switch_switch
 
+#All Christmas Lights:
+ #  name: All Christmas Lights
+  # entities:
+  #   - group.indoor_christmas_lights
+   #  - group.outdoor_christmas_lights
+
+#Halloween:
+ #  name: Halloween Lights
+  # entities:
+   #  - switch.halloween_dr
+    # - switch.halloween_kitchen
+#LR_Players:
+ #   name: Living Room Media Players
+  #  entities:
+   #   - media_player.shield
+    #  - media_player.kodi_shield
+     # - media_player.vizio_lr

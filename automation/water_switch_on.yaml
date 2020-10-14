@@ -1,11 +1,12 @@
  alias: "Water Sensor On"
  trigger:
    platform: state
-   entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor
+   entity_id: binary_sensor.aeotec_dsb45_water_sensor_sensor_3
    to: 'on'
  action:
-         #- service: homeassistant.turn_on
-         #entity_id: switch.sump_pump
-   - service: notify.shauntelegram
+   - service: homeassistant.turn_on
+     entity_id: switch.sump_pump
+   - service: notify.shauntelegram 
+#  - service: notify.shauntg_kerryha
      data:
-       message: "WATER LEVEL CRITICAL!"
+       message: "Water level is high. Starting to Pump"
